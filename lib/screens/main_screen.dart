@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../components/app_bar.dart' as app_bar;
+import '../components/tags.dart';
 
-const Color greenColor = Color.fromARGB(255, 42, 193, 188);
-const Color greyColor = Color.fromARGB(255, 245, 245, 245);
+const Color greenColor = Color(0xFF2AC1BC);
+const Color greyColor = Color(0xFFF5F5F5);
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -15,7 +16,16 @@ class MainScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children: const [app_bar.AppBar()],
+            children: [
+              const app_bar.AppBar(),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 12.0,
+                  horizontal: 16.0,
+                ),
+                child: Tags(),
+              )
+            ],
           ),
         ),
       ),

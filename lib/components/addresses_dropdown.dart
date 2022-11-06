@@ -45,6 +45,8 @@ class _AddressesDropdownState extends State<AddressesDropdown> {
             });
           },
           isExpanded: true,
+          iconEnabledColor: Colors.white,
+          iconDisabledColor: Colors.white,
           style: const TextStyle(color: Colors.black),
           value: dropdownValue,
           selectedItemBuilder: (context) => _addresses
