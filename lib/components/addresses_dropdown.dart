@@ -22,7 +22,11 @@ class _AddressesDropdownState extends State<AddressesDropdown> {
         item,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
-        style: const TextStyle(color: Colors.white, fontSize: 18.0),
+        style: const TextStyle(
+          color: Colors.white,
+          fontFamily: 'NanumGothic',
+          fontSize: 18.0,
+        ),
       ),
     );
   }
@@ -30,7 +34,7 @@ class _AddressesDropdownState extends State<AddressesDropdown> {
   DropdownMenuItem<String> _setItem({required String address}) {
     return DropdownMenuItem<String>(
       value: address,
-      child: Text(address),
+      child: Text(address, style: const TextStyle(fontFamily: 'NanumGothic')),
     );
   }
 
@@ -47,12 +51,13 @@ class _AddressesDropdownState extends State<AddressesDropdown> {
           isExpanded: true,
           iconEnabledColor: Colors.white,
           iconDisabledColor: Colors.white,
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(
+            color: Colors.black,
+            fontFamily: 'NanumGothic',
+          ),
           value: dropdownValue,
           selectedItemBuilder: (context) => _addresses
-              .map<Widget>(
-                (String item) => _setSelectedItem(item: item),
-              )
+              .map<Widget>((String item) => _setSelectedItem(item: item))
               .toList(),
           items: _addresses
               .map<DropdownMenuItem<String>>(

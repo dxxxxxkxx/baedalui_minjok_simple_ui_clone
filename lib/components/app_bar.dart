@@ -42,12 +42,14 @@ class AppBar extends StatelessWidget {
           ),
           TextFormField(
             onSaved: (newValue) {},
+            textAlignVertical: TextAlignVertical.center,
             decoration: const InputDecoration(
               filled: true,
               fillColor: Colors.white,
               border: InputBorder.none,
               prefixIcon: Icon(Icons.search, color: greenColor),
               hintText: '닭발? 순대? 곱창?',
+              hintStyle: TextStyle(fontFamily: 'NanumGothic'),
               hintMaxLines: 1,
             ),
           )
