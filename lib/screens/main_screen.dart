@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../components/Categories.dart';
+import '../components/categories.dart';
 import '../components/app_bar.dart' as app_bar;
 import '../components/banners.dart';
 import '../components/my_storages.dart';
