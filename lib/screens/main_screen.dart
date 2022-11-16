@@ -1,40 +1,45 @@
 import 'package:flutter/material.dart';
 
-import '../components/categories.dart';
-import '../components/app_bar.dart' as app_bar;
 import '../components/banners.dart';
+import '../components/categories.dart';
+import '../components/constants.dart';
+import '../components/my_app_bar.dart';
 import '../components/my_storages.dart';
 import '../components/tags.dart';
 
-const Color greenColor = Color(0xFF2AC1BC);
-const Color greyColor = Color(0xFFF5F5F5);
-
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  final List<Widget> _body = [
+    Tags(),
+    Categories(),
+    const Banners(),
+    MyStorages()
+  ];
+
+  MainScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: greyColor,
+      backgroundColor: backgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const app_bar.AppBar(),
+              const MyAppBar(),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                  vertical: 14.0,
+                  vertical: 12.0,
                   horizontal: 16.0,
                 ),
                 child: Column(
                   children: [
-                    Tags(),
+                    _body[0],
                     const SizedBox(height: 12.0),
-                    const Categories(),
+                    _body[1],
                     const SizedBox(height: 12.0),
-                    const Banners(),
+                    _body[2],
                     const SizedBox(height: 12.0),
-                    MyStorages()
+                    _body[3]
                   ],
                 ),
               )

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../repositories/repository.dart';
+import 'constants.dart';
+
 class AddressesDropdown extends StatefulWidget {
   const AddressesDropdown({Key? key}) : super(key: key);
 
@@ -8,7 +11,8 @@ class AddressesDropdown extends StatefulWidget {
 }
 
 class _AddressesDropdownState extends State<AddressesDropdown> {
-  final List<String> _addresses = ['우리집', '서올 송파구 위례성대로 2 장은빌딩 2층'];
+  final List<String> _addresses = Repository().addresses;
+
   String dropdownValue = '';
 
   _AddressesDropdownState() {
@@ -24,7 +28,7 @@ class _AddressesDropdownState extends State<AddressesDropdown> {
         overflow: TextOverflow.ellipsis,
         style: const TextStyle(
           color: Colors.white,
-          fontFamily: 'NanumGothic',
+          fontFamily: bodyFont,
           fontSize: 18.0,
         ),
       ),
@@ -34,7 +38,7 @@ class _AddressesDropdownState extends State<AddressesDropdown> {
   DropdownMenuItem<String> _setItem({required String address}) {
     return DropdownMenuItem<String>(
       value: address,
-      child: Text(address, style: const TextStyle(fontFamily: 'NanumGothic')),
+      child: Text(address, style: const TextStyle(fontFamily: bodyFont)),
     );
   }
 
@@ -53,7 +57,7 @@ class _AddressesDropdownState extends State<AddressesDropdown> {
           iconDisabledColor: Colors.white,
           style: const TextStyle(
             color: Colors.black,
-            fontFamily: 'NanumGothic',
+            fontFamily: bodyFont,
           ),
           value: dropdownValue,
           selectedItemBuilder: (context) => _addresses

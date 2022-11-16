@@ -2,6 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../repositories/repository.dart';
+import 'constants.dart';
+
 class Banners extends StatefulWidget {
   const Banners({Key? key}) : super(key: key);
 
@@ -10,13 +13,10 @@ class Banners extends StatefulWidget {
 }
 
 class _BannersState extends State<Banners> {
-  final List<String> _pages = [
-    'https://www.dailypop.kr/news/photo/201810/35546_58614_2549.jpg',
-    'https://www.safetimes.co.kr/news/photo/202112/104558_86910_138.jpg'
-  ];
+  final List<String> _banners = Repository().banners;
 
-  int _currentPage = 0;
   final PageController _pageController = PageController(initialPage: 0);
+  int _currentPage = 0;
 
   @override
   void initState() {
@@ -25,7 +25,7 @@ class _BannersState extends State<Banners> {
     Timer.periodic(
       const Duration(seconds: 5),
       (Timer timer) {
-        if (_currentPage < 1) {
+        if (_currentPage < _banners.length - 1) {
           _currentPage++;
         } else {
           _currentPage = 0;
@@ -45,13 +45,13 @@ class _BannersState extends State<Banners> {
       padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
       decoration: BoxDecoration(
         color: Colors.black45,
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(circular20_0),
       ),
       child: Text(
-        '${index + 1} / ${_pages.length} 모두보기',
+        '${index + 1} / ${_banners.length} 모두보기',
         style: const TextStyle(
           color: Colors.white,
-          fontFamily: 'NanumGothic',
+          fontFamily: bodyFont,
           fontSize: 10.0,
         ),
       ),
@@ -63,7 +63,7 @@ class _BannersState extends State<Banners> {
       alignment: Alignment.bottomRight,
       children: [
         Positioned.fill(
-          child: Image.network(_pages[index], fit: BoxFit.fill),
+          child: Image.network(_banners[index], fit: BoxFit.fill),
         ),
         Positioned(
           bottom: 8.0,
@@ -84,7 +84,7 @@ class _BannersState extends State<Banners> {
           onPageChanged: (value) {},
           pageSnapping: true,
           controller: _pageController,
-          itemCount: _pages.length,
+          itemCount: _banners.length,
           itemBuilder: (context, index) => GestureDetector(
             onTap: () {},
             child: _setPageViewItem(index: index),

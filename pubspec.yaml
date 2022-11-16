@@ -92,9 +92,9 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   fonts:
-    - family: DoHyeon
+    - family: DoHyeon-Regular
       fonts:
         - asset: assets/fonts/DoHyeon-Regular.ttf
-    - family: NanumGothic
+    - family: NanumGothic-Bold
       fonts:
         - asset: assets/fonts/NanumGothic-Bold.ttf

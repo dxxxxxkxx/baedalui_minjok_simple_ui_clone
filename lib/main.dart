@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'components/constants.dart';
 import 'screens/main_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(statusBarColor: greenColor),
+    const SystemUiOverlayStyle(statusBarColor: pointColor),
   );
 
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '배달의 민족 simple UI clone',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const MainScreen(),
+      home: MainScreen(),
     );
   }
 }
