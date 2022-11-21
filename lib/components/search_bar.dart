@@ -13,6 +13,8 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShadowContainer(
+      circular: 0.0,
+      boxShadowColor: Colors.black12,
       child: TextFormField(
         onSaved: (newValue) {},
         textAlignVertical: TextAlignVertical.center,

@@ -45,7 +45,7 @@ class _BannersState extends State<Banners> {
       padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
       decoration: BoxDecoration(
         color: Colors.black45,
-        borderRadius: BorderRadius.circular(circular20_0),
+        borderRadius: BorderRadius.circular(circular15_0),
       ),
       child: Text(
         '${index + 1} / ${_banners.length} 모두보기',

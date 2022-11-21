@@ -4,15 +4,16 @@ import 'constants.dart';
 
 class ShadowContainer extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
-  final BorderRadiusGeometry? borderRadiusGeometry;
+  final double circular;
+  final Color boxShadowColor;
   final DecorationImage? decorationImage;
   final Widget child;
 
   const ShadowContainer({
     required this.child,
     this.padding,
-    this.borderRadiusGeometry =
-        const BorderRadius.all(Radius.circular(circular20_0)),
+    this.circular = circular15_0,
+    this.boxShadowColor = shadowColor,
     this.decorationImage,
     Key? key,
   }) : super(key: key);
@@ -23,8 +24,8 @@ class ShadowContainer extends StatelessWidget {
       padding: padding,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: borderRadiusGeometry,
-        boxShadow: const [BoxShadow(color: shadowColor, blurRadius: 2.0)],
+        borderRadius: BorderRadius.circular(circular),
+        boxShadow: [BoxShadow(color: boxShadowColor, blurRadius: 4.0)],
         image: decorationImage,
       ),
       child: child,

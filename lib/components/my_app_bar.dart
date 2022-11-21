@@ -32,8 +32,8 @@ class MyAppBar extends StatelessWidget {
       decoration: const BoxDecoration(
         color: pointColor,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(circular20_0),
-          bottomRight: Radius.circular(circular20_0),
+          bottomLeft: Radius.circular(circular15_0),
+          bottomRight: Radius.circular(circular15_0),
         ),
       ),
       child: Column(

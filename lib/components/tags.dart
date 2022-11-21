@@ -14,6 +14,7 @@ class Tags extends StatelessWidget {
       onTap: () {},
       child: ShadowContainer(
         padding: const EdgeInsets.symmetric(horizontal: 14.0),
+        circular: 20.0,
         child: Row(
           children: [
             const Text(
@@ -40,11 +41,11 @@ class Tags extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 44.0,
+      height: 48.0,
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.all(2.0),
+        padding: const EdgeInsets.all(4.0),
         itemCount: _tags.length,
         itemBuilder: (context, index) => _setTag(tag: _tags[index]),
         separatorBuilder: (BuildContext context, int index) =>
