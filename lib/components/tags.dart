@@ -45,7 +45,8 @@ class Tags extends StatelessWidget {
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.all(4.0),
+        padding: const EdgeInsets.symmetric(vertical: 4.0),
+        clipBehavior: Clip.none,
         itemCount: _tags.length,
         itemBuilder: (context, index) => _setTag(tag: _tags[index]),
         separatorBuilder: (BuildContext context, int index) =>
